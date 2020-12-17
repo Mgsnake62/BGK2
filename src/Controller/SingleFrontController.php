@@ -6,14 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class SingleController extends AbstractController
+class SingleFrontController extends AbstractController
 {
     /**
-     * @Route("/single", name="pagesingle")
+     * @Route("admin/single", name="pagesingle")
      */
     public function index(): Response
     {
-        return $this->render('single/index.html.twig', [
+        return $this->render('singlefront/index.html.twig', [
             'controller_name' => 'SingleController',
         ]);
     }

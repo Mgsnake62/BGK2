@@ -6,15 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class FeatureController extends AbstractController
+class ContactFrontController extends AbstractController
 {
     /**
-     * @Route("/feature", name="pagefeature")
+     * @Route("admin/contact", name="pagecontact")
      */
     public function index(): Response
     {
-        return $this->render('feature/index.html.twig', [
-            'controller_name' => 'FeatureController',
+        return $this->render('contactfront/index.html.twig', [
+            'controller_name' => 'ContactController',
         ]);
     }
 }
