@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20201216152211 extends AbstractMigration
+final class Version20201218081452 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -33,6 +33,7 @@ final class Version20201216152211 extends AbstractMigration
         $this->addSql('CREATE TABLE menu (id INT AUTO_INCREMENT NOT NULL, plat VARCHAR(255) NOT NULL, prix DOUBLE PRECISION NOT NULL, description LONGTEXT NOT NULL, photos VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE review (id INT AUTO_INCREMENT NOT NULL, nom VARCHAR(255) NOT NULL, prenom VARCHAR(255) NOT NULL, photo VARCHAR(255) NOT NULL, message LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE slider (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, message LONGTEXT NOT NULL, src_image VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE blog_blog_reply ADD CONSTRAINT FK_EB81A7C1DAE07E97 FOREIGN KEY (blog_id) REFERENCES blog (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE blog_blog_reply ADD CONSTRAINT FK_EB81A7C1FE536A58 FOREIGN KEY (blog_reply_id) REFERENCES blogreply (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE blog_blogcategory ADD CONSTRAINT FK_C42EAAB8DAE07E97 FOREIGN KEY (blog_id) REFERENCES blog (id) ON DELETE CASCADE');
@@ -61,5 +62,6 @@ final class Version20201216152211 extends AbstractMigration
         $this->addSql('DROP TABLE menu');
         $this->addSql('DROP TABLE review');
         $this->addSql('DROP TABLE slider');
+        $this->addSql('DROP TABLE user');
     }
 }

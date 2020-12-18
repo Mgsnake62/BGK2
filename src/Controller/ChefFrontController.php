@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ChefFrontController extends AbstractController
 {
     /**
-     * @Route("admin/chef", name="pagechef")
+     * @Route("/chef", name="pagechef")
      */
     public function index(): Response
     {

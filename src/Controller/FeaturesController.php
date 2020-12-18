@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/features")
+ * @Route("admin/features")
  */
 class FeaturesController extends AbstractController
 {

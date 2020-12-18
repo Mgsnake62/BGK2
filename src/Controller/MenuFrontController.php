@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MenuFrontController extends AbstractController
 {
     /**
-     * @Route("admin/menu", name="pagemenu")
+     * @Route("/menu", name="pagemenu")
      */
     public function index(): Response
     {
